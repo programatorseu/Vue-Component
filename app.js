@@ -1,12 +1,14 @@
-Vue.createApp({
-
-})
-.component('click', {
-    template: '<button @click="count++">{{count}}</button>',
+const app = Vue.createApp({
     data() {
         return {
-            count: 0
+            plans: ["Simple", "Medium", "Hard Core"]
         }
+    }
+})
+.component('plan', {
+    template: '#plan-template',
+    props: {
+        name: {type: String, required: true}
     }
 })
 .mount('#app')
