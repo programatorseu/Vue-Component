@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <h1>Vue JS component fundamentas</h1>
-        <plan v-for="plan in plans" :name="plan"></plan>
+       <plan-picker></plan-picker>
     </div>
 
   <script type="text/x-template" id="plan-template">
@@ -21,6 +21,11 @@
         </div>
       </div>
     </script>
+    <script type="text/x-template" id="plan-picker-template">
+        <div class="plans">
+          <plan v-for="plan in plans" :name="plan"></plan>
+        </div>
+      </script>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="app.js"></script>
 </body>
