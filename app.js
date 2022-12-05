@@ -1,18 +1,19 @@
-const app = Vue.createApp({
-    
-})
-.component('plan', {
+let PlanComponent = {
     template: '#plan-template',
     props: {
         name: {type: String, required: true}
     }
-})
-.component('plan-picker', {
+}
+let PlanPickerComponent = {
+    components: {plan: PlanComponent},
     template: '#plan-picker-template',
     data() {
         return {
-            plans: ["Simple", "Medium", "Hard Core"]
+            plans: ["beginer", "Medium", "Hard Core"]
         }
     }
+}
+const app = Vue.createApp({
+    components: {PlanPicker: PlanPickerComponent}
 })
 .mount('#app')

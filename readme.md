@@ -15,3 +15,9 @@ to pass props
         name: {type: String, required: true}
     }
 ```
+## Register Global and Local
+`app.component` -> global registration 
+with global -> increase size of JS download in bundle
+
+we can define as js object and register locally : 
+`components` option to register locally 
