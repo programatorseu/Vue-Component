@@ -5,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .active-plan {
+            background-color: green;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <h1>Vue JS component fundamentas</h1>
        <plan-picker></plan-picker>
-       <plan name="Super"></plan>
     </div>
 
   <script type="text/x-template" id="plan-template">
-      <div class="plan">
+      <div class="plan" :class="{'active-plan': selected}" @click="select">
         <div class="description">
           <span class="title">
             {{name}}
@@ -24,7 +29,12 @@
     </script>
     <script type="text/x-template" id="plan-picker-template">
         <div class="plans">
-          <plan v-for="plan in plans" :name="plan"></plan>
+          <plan 
+            v-for="plan in plans" 
+            :name="plan"
+            :selected = "plan === selectedPlan"
+            v-on:select="selectPlan">
+        </plan>
         </div>
       </script>
     <script src="https://unpkg.com/vue@3"></script>
