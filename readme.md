@@ -31,3 +31,10 @@ we can define as js object and register locally :
 
 `$emit(nameOfEvent, payload)` to send custom events 
 payload - event data 
+
+## Naming Component 
+
+- multi word like `todo-item` 
+- BaseComponent : `BaseButton` or `AppButton`
+- tightly coupled names: `TodoList` `TodoListItem` `TodoListItemButton`
+
